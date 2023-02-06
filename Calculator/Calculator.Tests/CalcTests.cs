@@ -38,6 +38,7 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
+        [TestCategory("UnitTest")]
         [DataRow(0, 0, 0)]
         [DataRow(1, 2, 3)]
         [DataRow(-1, -2, -3)]
@@ -48,7 +49,7 @@ namespace Calculator.Tests
 
             var result = calc.Sum(a, b);
 
-            Assert.AreEqual(exp, result);
+           Assert.AreEqual(exp, result);
         }
 
     }

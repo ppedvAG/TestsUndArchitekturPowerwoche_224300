@@ -1,0 +1,54 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="Calculator.Tests" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="Calculator.Tests" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="CalcTests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Calculator.Tests.CalcTests.Sum_MAX_and_1_throws_OverflowException" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Sum_MAX_and_1_throws_OverflowException" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+        <Rule Match="All">
+          <Property Name="Project" Value="Calculator.Tests_Nunit" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="Calculator.Tests_Nunit" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="Tests" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="Calculator.Tests_Nunit.Tests.Sum_throws_OverflowExceptions" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Sum_throws_OverflowExceptions(int.MaxValue,1)" />
+                        <Property Name="DisplayName" Value="Sum_throws_OverflowExceptions(1,int.MaxValue)" />
+                        <Property Name="DisplayName" Value="Sum_throws_OverflowExceptions(int.MinValue,-1)" />
+                        <Property Name="DisplayName" Value="Sum_throws_OverflowExceptions(-1,int.MinValue)" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>

@@ -4,6 +4,7 @@ namespace Calculator.Tests_Nunit
     public class Tests
     {
         [Test]
+        [Category("UnitTest")]
         public void Sum_3_and_4_results_7()
         {
             //Arrange

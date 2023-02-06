@@ -2,10 +2,13 @@ namespace Calculator.Tests_xUnit
 {
     public class CalcTests
     {
+
         [Fact]
+        [Trait("Category", "UnitTest")]
         public void Calc_Sum_3_and_4_results_7()
         {
             //Arrange
+            InitTest();
             var calc = new Calc();
 
             //Act
@@ -13,6 +16,17 @@ namespace Calculator.Tests_xUnit
 
             //Assert
             Assert.Equal(7, result);
+            CleanUpTest();
+        }
+
+        private void CleanUpTest()
+        {
+
+        }
+
+        private void InitTest()
+        {
+
         }
 
         [Theory]
