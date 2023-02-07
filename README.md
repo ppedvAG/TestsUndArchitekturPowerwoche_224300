@@ -8,6 +8,6 @@ https://dotnet.microsoft.com/en-us/platform/support/policy
 https://webassembly.org/getting-started/developers-guide/  
 https://www.avaloniaui.net/  
 https://platform.uno/  
-https://www.electronjs.org/
+https://www.electronjs.org/  
 https://stryker-mutator.io/docs/stryker-net/getting-started/  
 
