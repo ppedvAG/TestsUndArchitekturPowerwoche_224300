@@ -24,11 +24,23 @@ namespace TddBank.Tests
         }
 
         [Fact]
-        public void Deposit_a_negative_value_throws_ArgumentException()
+        public void Deposit_more_than_MAX_should_throw_OverflowException()
         {
             var ba = new BankAccount();
 
-            Assert.Throws<ArgumentException>(() => ba.Deposit(-1m));
+            ba.Deposit(decimal.MaxValue);
+
+            Assert.Throws<OverflowException>(() => ba.Deposit(1m));
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        public void Deposit_a_negative_or_zero_value_throws_ArgumentException(decimal value)
+        {
+            var ba = new BankAccount();
+
+            Assert.Throws<ArgumentException>(() => ba.Deposit(value));
         }
 
         [Fact]
@@ -43,12 +55,14 @@ namespace TddBank.Tests
             Assert.Equal(5m, ba.Balance);
         }
 
-        [Fact]
-        public void Withdraw_a_negative_value_throws_ArgumentException()
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        public void Withdraw_a_negative_value_throws_ArgumentException(decimal value)
         {
             var ba = new BankAccount();
 
-            Assert.Throws<ArgumentException>(() => ba.Withdraw(-1m));
+            Assert.Throws<ArgumentException>(() => ba.Withdraw(value));
         }
 
         [Fact]
