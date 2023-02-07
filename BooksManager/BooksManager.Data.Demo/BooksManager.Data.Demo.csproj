@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BooksManager.Common\BooksManager.Common.csproj" />
+  </ItemGroup>
+
 </Project>
