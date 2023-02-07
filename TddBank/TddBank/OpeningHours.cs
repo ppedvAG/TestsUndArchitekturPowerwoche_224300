@@ -1,4 +1,6 @@
-﻿namespace TddBank
+﻿using System.IO;
+
+namespace TddBank
 {
     public class OpeningHours
     {
@@ -17,5 +19,26 @@
 
             return false;
         }
+
+        public bool IsNowOpen()
+        {
+            return IsOpen(DateTime.Now);
+        }
+
+        public bool IsWeekend()
+        {
+            if (GetConfig().Contains("☕"))
+                return true;
+
+            return DateTime.Now.DayOfWeek == DayOfWeek.Sunday ||
+                   DateTime.Now.DayOfWeek == DayOfWeek.Saturday;
+        }
+
+        public string GetConfig()
+        {
+            using (var sr = new StreamReader("b:\\config.txt"))
+                return sr.ReadToEnd();
+        }
+
     }
 }
