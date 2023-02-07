@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Great Gatsby",
+    "Description": "A novel about decadence and excess in the jazz age",
+    "Price": 12.99,
+    "Pages": 180,
+    "Authors": [
+      "F. Scott Fitzgerald"
+    ]
+  },
+  {
+    "Id": 2,
+    "Title": "To Kill a Mockingbird",
+    "Description": "A classic novel about racial injustice in the American South",
+    "Price": 15.99,
+    "Pages": 276,
+    "Authors": [
+      "Harper Lee"
+    ]
+  },
+  {
+    "Id": 3,
+    "Title": "Pride and Prejudice",
+    "Description": "A classic novel about love and society in Georgian England",
+    "Price": 14.99,
+    "Pages": 250,
+    "Authors": [
+      "Jane Austen"
+    ]
+  }
+]
