@@ -23,6 +23,13 @@ namespace TddBank.Tests
         }
 
         [Fact]
+        public void IsNowOpen()
+        {
+            var oh = new OpeningHours();
+            oh.IsNowOpen();
+        }
+
+        [Fact]
         public void IsWeekend()
         {
             using (ShimsContext.Create())
