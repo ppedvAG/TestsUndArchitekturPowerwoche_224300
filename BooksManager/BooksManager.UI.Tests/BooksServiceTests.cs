@@ -55,6 +55,10 @@ namespace BooksManager.UI.Tests
             Assert.Equal(3, result.First().Id);
             Assert.Equal(1, result.ElementAt(1).Id);
             Assert.Equal(2, result.ElementAt(2).Id);
+
+            mock.Verify(x => x.GetBooks(), Times.Once());
+            //mock.Verify(x => x.KillAllHumans(), Times.Exactly(2));
+
         }
     }
 
@@ -67,6 +71,11 @@ namespace BooksManager.UI.Tests
             books.Add(new Book { Id = 2, Pages = 500, Price = 200m });
             books.Add(new Book { Id = 3, Pages = 200, Price = 200m });
             return books;
+        }
+
+        public void KillAllHumans()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

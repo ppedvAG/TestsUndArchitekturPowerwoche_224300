@@ -3,5 +3,7 @@
     public interface IDataSource
     {
         IEnumerable<Book> GetBooks();
+
+        void KillAllHumans();
     }
 }
