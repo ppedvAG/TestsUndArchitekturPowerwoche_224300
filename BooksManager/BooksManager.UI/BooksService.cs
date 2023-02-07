@@ -15,7 +15,7 @@ namespace BooksManager.UI
 
         public IEnumerable<Book> GetBooksByBestPagePriceRatio()
         {
-            return DataSource.GetBooks().OrderBy(x => x.Price / x.Pages);
+            return DataSource.GetBooks().OrderBy(x => x.Price / x.Pages).ThenBy(x => x.Title);
 
             //Schlecht weil implementierung gegen Klassse
             //new DemoDataSource().GetBooks().OrderBy(x=>x.Price).ToList...
