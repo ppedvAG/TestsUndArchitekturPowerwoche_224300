@@ -8,8 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" Margin="4">
-            <Button Click="LoadBooks">Laden</Button>
+            <Button AutomationProperties.AutomationId="b1"
+                    Click="LoadBooks">Demodaten Laden</Button>
         </WrapPanel>
-        <DataGrid Name="myGrid"/>
+        <DataGrid Name="myGrid" AutomationProperties.AutomationId="g1"/>
     </DockPanel>
 </Window>

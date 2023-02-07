@@ -14,7 +14,7 @@ namespace BooksManager.Data.Demo
 
         public void KillAllHumans()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

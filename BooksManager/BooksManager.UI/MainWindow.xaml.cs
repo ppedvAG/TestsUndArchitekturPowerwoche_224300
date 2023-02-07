@@ -30,7 +30,7 @@ namespace BooksManager.UI
         {
             var booksDemoSource = new DemoDataSource();
             var booksService = new BooksService(booksDemoSource);
-            myGrid.ItemsSource = booksService.GetBooksByBestPagePriceRatio();
+            //myGrid.ItemsSource = booksService.GetBooksByBestPagePriceRatio();
         }
     }
 }
