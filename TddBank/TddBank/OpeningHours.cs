@@ -1,6 +1,10 @@
-﻿namespace TddBank
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("TddBank.Tests")]
+
+namespace TddBank
 {
-    public class OpeningHours
+    internal class OpeningHours
     {
         public bool IsOpen(DateTime dt)
         {
@@ -16,6 +20,11 @@
                 return true;
 
             return false;
+        }
+
+        public void Lalalal()
+        {
+            Console.WriteLine("");
         }
     }
 }

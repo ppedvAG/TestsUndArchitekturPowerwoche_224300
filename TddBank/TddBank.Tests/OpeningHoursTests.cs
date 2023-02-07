@@ -16,7 +16,6 @@
             var dt = new DateTime(y, M, d, h, m, 0);
             var oh = new OpeningHours();
 
-
             Assert.Equal(result, oh.IsOpen(dt));
         }
     }
