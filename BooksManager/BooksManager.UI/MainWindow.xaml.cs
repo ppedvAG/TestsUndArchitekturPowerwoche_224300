@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BooksManager.Data.Demo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace BooksManager.UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void LoadBooks(object sender, RoutedEventArgs e)
+        {
+            var booksDemoSource = new DemoDataSource();
+            var booksService = new BooksService(booksDemoSource);
+            myGrid.ItemsSource = booksService.GetBooksByBestPagePriceRatio();
         }
     }
 }

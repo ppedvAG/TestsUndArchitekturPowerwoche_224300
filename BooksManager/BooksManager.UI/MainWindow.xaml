@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <WrapPanel DockPanel.Dock="Top">
-            <Button>Laden</Button>
+        <WrapPanel DockPanel.Dock="Top" Margin="4">
+            <Button Click="LoadBooks">Laden</Button>
         </WrapPanel>
         <DataGrid Name="myGrid"/>
     </DockPanel>
