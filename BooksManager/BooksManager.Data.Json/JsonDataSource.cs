@@ -14,7 +14,7 @@ namespace BooksManager.Data.Json
 
         public IEnumerable<Book> GetBooks()
         {
-            return JsonSerializer.Deserialize<IEnumerable<Book>>(FilePath);
+            return JsonSerializer.Deserialize<IEnumerable<Book>>(File.ReadAllText(FilePath));
         }
 
         public void KillAllHumans()
