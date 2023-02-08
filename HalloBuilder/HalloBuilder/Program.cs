@@ -4,7 +4,7 @@ using HalloBuilder;
 Console.WriteLine("Hello, World!");
 
 var schrank1 = new Schrank.Builder()
-                         .SetObfläche(Oberfläche.Lackiert)
+                         .SetOberfläche(Oberfläche.Lackiert)
                          .SetFarbe("Gelb")
                          .SetBöden(6)
                          .SetTüren(5)
@@ -12,7 +12,7 @@ var schrank1 = new Schrank.Builder()
 
 
 var schrank2 = new Schrank.Builder()
-                         .SetObfläche(Oberfläche.Gewachst)
+                         .SetOberfläche(Oberfläche.Gewachst)
                          .SetBöden(6)
-                         .SetTüren(5)
+                         .SetTüren(51)
                          .Create();

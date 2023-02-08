@@ -44,7 +44,7 @@
                 return this;
             }
 
-            public Builder SetObfläche(Oberfläche oberfläche)
+            public Builder SetOberfläche(Oberfläche oberfläche)
             {
                 _schrank.Oberfläche = oberfläche;
                 return this;
