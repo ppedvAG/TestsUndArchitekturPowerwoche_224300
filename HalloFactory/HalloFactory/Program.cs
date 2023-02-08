@@ -5,8 +5,8 @@ using System.Data.Common;
 
 Console.WriteLine("Hello, World!");
 
-//DbProviderFactory factory = Microsoft.Data.SqlClient.SqlClientFactory.Instance;
-DbProviderFactory factory = Microsoft.Data.Sqlite.SqliteFactory.Instance;
+DbProviderFactory factory = Microsoft.Data.SqlClient.SqlClientFactory.Instance;
+//DbProviderFactory factory = Microsoft.Data.Sqlite.SqliteFactory.Instance;
 
 ShowUsers(factory);
  
