@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.HighwayToHell.Model\ppedv.HighwayToHell.Model.csproj" />
+  </ItemGroup>
+
 </Project>

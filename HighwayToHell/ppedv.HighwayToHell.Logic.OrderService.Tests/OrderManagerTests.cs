@@ -9,7 +9,7 @@ namespace ppedv.HighwayToHell.Logic.OrderService.Tests
         [InlineData(50, 0.1, 5)]
         public void CalculateVAT_ShouldReturnCorrectVATAmount(decimal price, decimal vatPercentage, decimal expectedVAT)
         {
-            var om = new OrderManager();
+            var om = new OrderManager(null);
 
             decimal actualVAT = om.CalculateVAT(price, vatPercentage);
 
