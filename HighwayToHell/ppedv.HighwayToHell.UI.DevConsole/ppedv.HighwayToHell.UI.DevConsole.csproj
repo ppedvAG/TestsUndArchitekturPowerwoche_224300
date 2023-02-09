@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ppedv.HighwayToHell.Data.EfCore\ppedv.HighwayToHell.Data.EfCore.csproj" />
     <ProjectReference Include="..\ppedv.HighwayToHell.Logic.OrderService\ppedv.HighwayToHell.Logic.OrderService.csproj" />
     <ProjectReference Include="..\ppedv.HighwayToHell.Model\ppedv.HighwayToHell.Model.csproj" />
