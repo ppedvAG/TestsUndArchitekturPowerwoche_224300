@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Logic.O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Logic.OrderService.Tests", "ppedv.HighwayToHell.Logic.OrderService.Tests\ppedv.HighwayToHell.Logic.OrderService.Tests.csproj", "{59B5E848-DBAB-409E-90BD-53D5FB3081C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.UI.DevConsole", "ppedv.HighwayToHell.UI.DevConsole\ppedv.HighwayToHell.UI.DevConsole.csproj", "{4949DD47-AEB0-445F-87FA-2C981713CE58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{59B5E848-DBAB-409E-90BD-53D5FB3081C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B5E848-DBAB-409E-90BD-53D5FB3081C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B5E848-DBAB-409E-90BD-53D5FB3081C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
