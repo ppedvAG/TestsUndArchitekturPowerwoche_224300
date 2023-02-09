@@ -12,7 +12,12 @@ https://platform.uno/
 https://www.electronjs.org/  
 https://stryker-mutator.io/docs/stryker-net/getting-started/  
 https://github.com/FlaUI/FlaUI
+https://autofixture.github.io/
+https://fluentassertions.com/
 
 ## Patterns
 https://en.wikipedia.org/wiki/Software_design_pattern  
 https://www.dofactory.com/net/design-patterns  
+
+
+https://github.com/OleksiiKovalov/expressprofiler

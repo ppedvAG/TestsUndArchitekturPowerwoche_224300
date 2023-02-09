@@ -28,6 +28,8 @@ namespace ppedv.HighwayToHell.Data.EfCore
         {
             modelBuilder.Entity<Order>().HasOne(x => x.BillingCustomer).WithMany(x => x.BillingOrders);
             modelBuilder.Entity<Order>().HasOne(x => x.DeliveryCustomer).WithMany(x => x.DeliveryOrders);
+
+            //modelBuilder.Entity<OrderItem>().Property(x => x.Color).HasColumnName("Farbe").HasMaxLength(200);
         }
     }
 }
