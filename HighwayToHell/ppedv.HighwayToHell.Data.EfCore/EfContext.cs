@@ -23,5 +23,11 @@ namespace ppedv.HighwayToHell.Data.EfCore
         {
             optionsBuilder.UseSqlServer(_conString).UseLazyLoadingProxies();
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>().HasOne(x => x.BillingCustomer).WithMany(x => x.BillingOrders);
+            modelBuilder.Entity<Order>().HasOne(x => x.DeliveryCustomer).WithMany(x => x.DeliveryOrders);
+        }
     }
 }
