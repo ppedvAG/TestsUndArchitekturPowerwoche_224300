@@ -1,3 +1,4 @@
+using FluentAssertions;
 using ppedv.HighwayToHell.Model;
 
 namespace ppedv.HighwayToHell.Data.EfCore.Tests
@@ -15,7 +16,7 @@ namespace ppedv.HighwayToHell.Data.EfCore.Tests
 
             var result = con.Database.EnsureCreated();
 
-            Assert.True(result);
+            result.Should().BeTrue();
         }
 
         [Fact]
@@ -29,16 +30,13 @@ namespace ppedv.HighwayToHell.Data.EfCore.Tests
 
                 con.OrderItems.Add(oi);
                 var result = con.SaveChanges();
-                Assert.Equal(1, result);
+                result.Should().Be(1);
             }
 
             using (var con = new EfContext(conString))
             {
                 var loaded = con.OrderItems.Find(oi.Id);
-                Assert.NotNull(loaded);
-                Assert.Equal(oi.Amount, loaded.Amount);
-                Assert.Equal(oi.Color, loaded.Color);
-                Assert.Equal(oi.Price, loaded.Price);
+                loaded.Should().NotBeNull().And.BeEquivalentTo(oi);
             }
         }
     }
