@@ -10,6 +10,7 @@ namespace ppedv.HighwayToHell.UI.WPF.ViewModels
         {
             this.customer = customer;
         }
+
         public string Name { get => customer.Name; set => customer.Name = value; }
         public string Adress { get => customer.Adress; set => customer.Adress = value; }
         public string CarCount { get; set; }
