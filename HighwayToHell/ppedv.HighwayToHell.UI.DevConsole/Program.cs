@@ -17,11 +17,12 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=HightwayToHell_dev;T
 
 //DI per AutoFac
 var builder = new ContainerBuilder();
-builder.RegisterType<EfUnitOfWork>().WithParameter("conString",conString).As<IUnitOfWork>();
-var container = builder.Build();    
+builder.RegisterType<EfUnitOfWork>().WithParameter("conString", conString).As<IUnitOfWork>();
+builder.RegisterType<OrderManager>().As<IOrderManager>();
+var container = builder.Build();
 
-OrderManager om = new OrderManager(container.Resolve<IUnitOfWork>());
-IUnitOfWork uow = container.Resolve<IUnitOfWork>();    
+IOrderManager om = container.Resolve<IOrderManager>();
+IUnitOfWork uow = container.Resolve<IUnitOfWork>();
 
 //DI Manuell 
 //IRepository repo = new ppedv.HighwayToHell.Data.EfCore.EfRepository(conString);

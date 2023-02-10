@@ -3,7 +3,7 @@ using ppedv.HighwayToHell.Model.Contracts;
 
 namespace ppedv.HighwayToHell.Logic.OrderService
 {
-    public class OrderManager
+    public class OrderManager : IOrderManager
     {
         public IUnitOfWork UnitOfWork { get; }
 
