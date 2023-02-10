@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using ppedv.HighwayToHell.UI.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,8 +26,7 @@ namespace ppedv.HighwayToHell.UI.WPF.Views
         public CustomerView()
         {
             InitializeComponent();
+            DataContext =  App.Current.Services.GetService<CustomerViewModel>();
         }
-
-        
     }
 }

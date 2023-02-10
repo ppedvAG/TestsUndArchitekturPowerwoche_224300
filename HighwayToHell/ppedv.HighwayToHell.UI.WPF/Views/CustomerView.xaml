@@ -7,9 +7,9 @@
              xmlns:viewmodels="clr-namespace:ppedv.HighwayToHell.UI.WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewmodels:CustomerViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <DockPanel>
         <WrapPanel Margin="4" DockPanel.Dock="Top">
             <Button Command="{Binding SaveCommand}">Speichern</Button>

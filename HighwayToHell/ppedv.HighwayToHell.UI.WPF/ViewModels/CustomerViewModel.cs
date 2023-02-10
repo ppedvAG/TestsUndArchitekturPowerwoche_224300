@@ -3,41 +3,38 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.VisualBasic;
 using ppedv.HighwayToHell.Model;
 using ppedv.HighwayToHell.Model.Contracts;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Channels;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace ppedv.HighwayToHell.UI.WPF.ViewModels
 {
     public class CustomerViewModel : ObservableObject
     {
-        static string conString = "Server=(localdb)\\mssqllocaldb;Database=HightwayToHell_dev;Trusted_Connection=true;";
-        private Customer selectedCustomer;
-
-        //hack: kommt weg!!!
-        public CustomerViewModel() : this(new Data.EfCore.EfUnitOfWork(conString))
-        { }
-
+        private CustomerItemViewModel selectedCustomer;
         public ICommand SaveCommand { get; set; }
         public ICommand SaveCommand2 { get; set; }
-
 
         public CustomerViewModel(IUnitOfWork unitOfWork)
         {
             UnitOfWork = unitOfWork;
-            CustomerList = new List<Customer>(unitOfWork.GetRepo<Customer>().GetAll());
-            SaveCommand = new SaveCommand(UnitOfWork);
+            foreach (var item in unitOfWork.GetRepo<Customer>().GetAll())
+            {
+                CustomerList.Add(new CustomerItemViewModel(item)
+                {
+                    CarCount = "12",
+                    Steuernummer = "382764876"
+                });
+            }
 
+            SaveCommand = new SaveCommand(UnitOfWork);
             SaveCommand2 = new RelayCommand(() => unitOfWork.SaveChanges());
         }
 
         public IUnitOfWork UnitOfWork { get; }
 
-        public List<Customer> CustomerList { get; set; }
+        public ObservableCollection<CustomerItemViewModel> CustomerList { get; set; } = new ObservableCollection<CustomerItemViewModel>();
 
-        public Customer SelectedCustomer
+        public CustomerItemViewModel SelectedCustomer
         {
             get => selectedCustomer;
             set
@@ -61,36 +58,5 @@ namespace ppedv.HighwayToHell.UI.WPF.ViewModels
             }
         }
 
-    }
-
-    class CustomerItemViewModel
-    {
-        public string Name { get; set; }
-        public string Adress { get; set; }
-        public string CarCount { get; set; }
-        public string Steuernummer { get; set; }
-    }
-
-
-    class SaveCommand : ICommand
-    {
-        private readonly IUnitOfWork unitOfWork;
-
-        public event EventHandler? CanExecuteChanged;
-
-        public bool CanExecute(object? parameter)
-        {
-            return true;
-        }
-
-        public void Execute(object? parameter)
-        {
-            unitOfWork.SaveChanges();
-        }
-
-        public SaveCommand(IUnitOfWork unitOfWork)
-        {
-            this.unitOfWork = unitOfWork;
-        }
     }
 }
