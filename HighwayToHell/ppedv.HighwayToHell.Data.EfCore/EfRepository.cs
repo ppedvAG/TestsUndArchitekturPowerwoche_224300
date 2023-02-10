@@ -3,30 +3,6 @@ using ppedv.HighwayToHell.Model.Contracts;
 
 namespace ppedv.HighwayToHell.Data.EfCore
 {
-    public class EfUnitOfWork : IUnitOfWork
-    {
-        readonly EfContext _context;
-
-        public EfUnitOfWork(string conString)
-        {
-            _context = new EfContext(conString);
-        }
-
-        public IRepository<Car> CarRepository => new EfRepository<Car>(_context);
-
-        public IRepository<Order> OrderRepository => new EfRepository<Order>(_context);
-
-        public IRepository<T> GetRepo<T>() where T : Entity
-        {
-            return new EfRepository<T>(_context);
-        }
-
-        public int SaveChanges()
-        {
-            return _context.SaveChanges();
-        }
-    }
-
     public class EfRepository<T> : IRepository<T> where T : Entity
     {
         protected readonly EfContext _context;
@@ -36,7 +12,7 @@ namespace ppedv.HighwayToHell.Data.EfCore
             _context = context;
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             _context.Add(entity);
         }

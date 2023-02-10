@@ -1,15 +1,5 @@
 ﻿namespace ppedv.HighwayToHell.Model.Contracts
 {
-    public interface IUnitOfWork
-    {
-        IRepository<Car> CarRepository { get; }
-        IRepository<Order> OrderRepository { get; }
-        //... repos
-
-        int SaveChanges();
-
-        IRepository<T> GetRepo<T>() where T : Entity;
-    }
 
     public interface IRepository<T> where T : Entity
     {
