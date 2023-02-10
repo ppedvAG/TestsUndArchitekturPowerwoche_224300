@@ -20,4 +20,9 @@ https://en.wikipedia.org/wiki/Software_design_pattern
 https://www.dofactory.com/net/design-patterns  
 
 
-https://github.com/OleksiiKovalov/expressprofiler
+https://github.com/OleksiiKovalov/expressprofiler  
+https://www.eziriz.com/reactor_features.htm  
+https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/  
+https://docs.fluentvalidation.net/en/latest/  
+http://www.pdfsharp.net/migradocoverview.ashx?AspxAutoDetectCookieSupport=1  
+
