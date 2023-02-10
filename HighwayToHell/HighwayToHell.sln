@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33402.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Model", "ppedv.HighwayToHell.Model\ppedv.HighwayToHell.Model.csproj", "{046BCC08-BCF0-48F0-A55A-6D189CFF8FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.Model", "ppedv.HighwayToHell.Model\ppedv.HighwayToHell.Model.csproj", "{046BCC08-BCF0-48F0-A55A-6D189CFF8FB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Data.EfCore", "ppedv.HighwayToHell.Data.EfCore\ppedv.HighwayToHell.Data.EfCore.csproj", "{5A8EEFFF-2EE5-4FB9-9B82-A670595EDDD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.Data.EfCore", "ppedv.HighwayToHell.Data.EfCore\ppedv.HighwayToHell.Data.EfCore.csproj", "{5A8EEFFF-2EE5-4FB9-9B82-A670595EDDD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Data.EfCore.Tests", "ppedv.HighwayToHell.Data.EfCore.Tests\ppedv.HighwayToHell.Data.EfCore.Tests.csproj", "{0575885B-3E1F-4527-AFBF-D5FCAFF9EAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.Data.EfCore.Tests", "ppedv.HighwayToHell.Data.EfCore.Tests\ppedv.HighwayToHell.Data.EfCore.Tests.csproj", "{0575885B-3E1F-4527-AFBF-D5FCAFF9EAB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Logic.OrderService", "ppedv.HighwayToHell.Logic.OrderService\ppedv.HighwayToHell.Logic.OrderService.csproj", "{C11D96BB-CDC4-450B-8A69-7A7FA9ACFA69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.Logic.OrderService", "ppedv.HighwayToHell.Logic.OrderService\ppedv.HighwayToHell.Logic.OrderService.csproj", "{C11D96BB-CDC4-450B-8A69-7A7FA9ACFA69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.Logic.OrderService.Tests", "ppedv.HighwayToHell.Logic.OrderService.Tests\ppedv.HighwayToHell.Logic.OrderService.Tests.csproj", "{59B5E848-DBAB-409E-90BD-53D5FB3081C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.Logic.OrderService.Tests", "ppedv.HighwayToHell.Logic.OrderService.Tests\ppedv.HighwayToHell.Logic.OrderService.Tests.csproj", "{59B5E848-DBAB-409E-90BD-53D5FB3081C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.UI.DevConsole", "ppedv.HighwayToHell.UI.DevConsole\ppedv.HighwayToHell.UI.DevConsole.csproj", "{4949DD47-AEB0-445F-87FA-2C981713CE58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.HighwayToHell.UI.DevConsole", "ppedv.HighwayToHell.UI.DevConsole\ppedv.HighwayToHell.UI.DevConsole.csproj", "{4949DD47-AEB0-445F-87FA-2C981713CE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.HighwayToHell.UI.ASPMVC", "ppedv.HighwayToHell.UI.ASPMVC\ppedv.HighwayToHell.UI.ASPMVC.csproj", "{4F311A2B-7C39-4980-A8CA-DAECEEBF5801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4949DD47-AEB0-445F-87FA-2C981713CE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F311A2B-7C39-4980-A8CA-DAECEEBF5801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F311A2B-7C39-4980-A8CA-DAECEEBF5801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F311A2B-7C39-4980-A8CA-DAECEEBF5801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F311A2B-7C39-4980-A8CA-DAECEEBF5801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ppedv.HighwayToHell.Model.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modified)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => order.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.Created)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => order.Modified)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=order.Id }) |
+                    @Html.ActionLink("Details", "Details", new {  id=order.Id}) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=order.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
