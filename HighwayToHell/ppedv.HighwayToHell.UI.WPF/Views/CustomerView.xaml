@@ -3,15 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ppedv.HighwayToHell.UI.WPF.Views"
+             xmlns:local="clr-namespace:ppedv.HighwayToHell.UI.WPF.Views" 
+             xmlns:viewmodels="clr-namespace:ppedv.HighwayToHell.UI.WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodels:CustomerViewModel/>
+    </UserControl.DataContext>
     <DockPanel>
         <WrapPanel Margin="4" DockPanel.Dock="Top">
-            <Button>Speichern</Button>
+            <Button Command="{Binding SaveCommand}">Speichern</Button>
             <Button>Löschen</Button>
             <Button>Neu</Button>
-
         </WrapPanel>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -20,7 +23,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid/>
+            <DataGrid ItemsSource="{Binding CustomerList}"
+                      SelectedItem="{Binding SelectedCustomer}"/>
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -30,15 +34,16 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
-
-
                 </Grid.RowDefinitions>
                 <Label>Name</Label>
-                <TextBox Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCustomer.Name}" Grid.Column="1"/>
                 <Label Grid.Row="1">Adress</Label>
-                <TextBox Grid.Row="1" Grid.Column="1"/>
-                <GroupBox Grid.Row="2" Grid.ColumnSpan="2" Header="Orders">
+                <TextBox Text="{Binding SelectedCustomer.Adress}" Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.Row="2">Car Count</Label>
+                <TextBlock Text="{Binding CarCountOfSelectedCustomer}" Grid.Row="2" Grid.Column="1"/>
+                <GroupBox Grid.Row="3" Grid.ColumnSpan="2" Header="Orders">
                     <DataGrid />
                 </GroupBox>
             </Grid>

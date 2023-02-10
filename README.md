@@ -25,4 +25,7 @@ https://www.eziriz.com/reactor_features.htm
 https://learn.microsoft.com/en-us/dotnet/communitytoolkit/mvvm/  
 https://docs.fluentvalidation.net/en/latest/  
 http://www.pdfsharp.net/migradocoverview.ashx?AspxAutoDetectCookieSupport=1  
+https://mahapps.com/  
+https://benruehl.github.io/adonis-ui/  
+
 

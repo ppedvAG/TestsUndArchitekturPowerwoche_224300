@@ -24,5 +24,7 @@ namespace ppedv.HighwayToHell.UI.WPF.Views
         {
             InitializeComponent();
         }
+
+        
     }
 }
