@@ -3,43 +3,60 @@ using ppedv.HighwayToHell.Model.Contracts;
 
 namespace ppedv.HighwayToHell.Data.EfCore
 {
-    public class EfRepository : IRepository
+    public class EfUnitOfWork : IUnitOfWork
     {
         readonly EfContext _context;
 
-        public EfRepository(string conString)
+        public EfUnitOfWork(string conString)
         {
             _context = new EfContext(conString);
         }
 
-        public void Add<T>(T entity) where T : Entity
-        {
-            //if (typeof(T).IsAssignableFrom(typeof(Car)))
-            //    _context.Cars.Add(entity as Car);
-            _context.Add(entity);
-        }
+        public IRepository<Car> CarRepository => new EfRepository<Car>(_context);
 
-        public void Delete<T>(T entity) where T : Entity
-        {
-            _context.Remove(entity);
-        }
+        public IRepository<Order> OrderRepository => new EfRepository<Order>(_context);
 
-        public IEnumerable<T> GetAll<T>() where T : Entity
+        public IRepository<T> GetRepo<T>() where T : Entity
         {
-            return _context.Set<T>().ToList();
-        }
-
-        public T? GetById<T>(int id) where T : Entity
-        {
-            return _context.Set<T>().Find(id);
+            return new EfRepository<T>(_context);
         }
 
         public int SaveChanges()
         {
             return _context.SaveChanges();
         }
+    }
 
-        public void Update<T>(T entity) where T : Entity
+    public class EfRepository<T> : IRepository<T> where T : Entity
+    {
+        protected readonly EfContext _context;
+
+        public EfRepository(EfContext context)
+        {
+            _context = context;
+        }
+
+        public void Add(T entity)
+        {
+            _context.Add(entity);
+        }
+
+        public void Delete(T entity)
+        {
+            _context.Remove(entity);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return _context.Set<T>().ToList();
+        }
+
+        public T? GetById(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
+        public void Update(T entity)
         {
             _context.Update(entity);
         }

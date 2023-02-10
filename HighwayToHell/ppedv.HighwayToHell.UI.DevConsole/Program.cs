@@ -17,11 +17,11 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=HightwayToHell_dev;T
 
 //DI per AutoFac
 var builder = new ContainerBuilder();
-builder.RegisterType<EfRepository>().WithParameter("conString",conString).As<IRepository>();
+builder.RegisterType<EfUnitOfWork>().WithParameter("conString",conString).As<IUnitOfWork>();
 var container = builder.Build();    
 
-OrderManager om = new OrderManager(container.Resolve<IRepository>());
-IRepository repo = container.Resolve<IRepository>();    
+OrderManager om = new OrderManager(container.Resolve<IUnitOfWork>());
+IUnitOfWork uow = container.Resolve<IUnitOfWork>();    
 
 //DI Manuell 
 //IRepository repo = new ppedv.HighwayToHell.Data.EfCore.EfRepository(conString);
@@ -31,13 +31,13 @@ int bestMonth = om.GetBestSellingMonth();
 Console.WriteLine($"Best Month: {new DateTime(1, bestMonth, 1):MMMM}");
 
 Console.WriteLine("--- CARS ---");
-foreach (var car in repo.GetAll<Car>())
+foreach (var car in uow.GetRepo<Car>().GetAll())
 {
     Console.WriteLine($"{car.Manufacturer?.Name} {car.Model}");
 }
 
 Console.WriteLine("--- ORDERS ---");
-foreach (var order in repo.GetAll<Order>())
+foreach (var order in uow.GetRepo<Order>().GetAll())
 {
     Console.WriteLine($"{order.OrderDate} pay:{order.BillingCustomer?.Name} deliver to:{order.DeliveryCustomer?.Name}");
     foreach (var item in order.Items)

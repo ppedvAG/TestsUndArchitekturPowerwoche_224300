@@ -10,18 +10,21 @@ namespace ppedv.HighwayToHell.Logic.OrderService.Tests
         [Fact]
         public void GetBestSellingMonth_December_wins()
         {
-            var mock = new Mock<IRepository>();
-            mock.Setup(x => x.GetAll<Order>()).Returns(() =>
-            {
-                var o1 = new Order { OrderDate = new DateTime(2000, 4, 1) };
-                o1.Items.Add(new OrderItem { Amount = 4, Price = 12 });
-                var o2 = new Order { OrderDate = new DateTime(2000, 12, 1) };
-                o2.Items.Add(new OrderItem { Amount = 2, Price = 14 });
-                o2.Items.Add(new OrderItem { Amount = 2, Price = 12 });
-                return new[] {o1, o2 }; 
-            });
+            var mock = new Mock<IRepository<Order>>();
+            mock.Setup(x => x.GetAll()).Returns(() =>
+             {
+                 var o1 = new Order { OrderDate = new DateTime(2000, 4, 1) };
+                 o1.Items.Add(new OrderItem { Amount = 4, Price = 12 });
+                 var o2 = new Order { OrderDate = new DateTime(2000, 12, 1) };
+                 o2.Items.Add(new OrderItem { Amount = 2, Price = 14 });
+                 o2.Items.Add(new OrderItem { Amount = 2, Price = 12 });
+                 return new[] { o1, o2 };
+             });
+            var uowMock = new Mock<IUnitOfWork>();
+            uowMock.Setup(x=>x.GetRepo<Order>()).Returns(mock.Object);  
+            uowMock.Setup(x=>x.OrderRepository).Returns(mock.Object);  
 
-            var om = new OrderManager(mock.Object);
+            var om = new OrderManager(uowMock.Object);
 
             var result = om.GetBestSellingMonth();
 

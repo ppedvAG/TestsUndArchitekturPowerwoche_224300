@@ -5,16 +5,17 @@ namespace ppedv.HighwayToHell.Logic.OrderService
 {
     public class OrderManager
     {
-        public IRepository Repository { get; }
+        public IUnitOfWork UnitOfWork { get; }
 
-        public OrderManager(IRepository repository)
+        public OrderManager(IUnitOfWork unitOfWork)
         {
-            Repository = repository;
+            UnitOfWork = unitOfWork;
         }
 
         public int GetBestSellingMonth()
         {
-            return Repository.GetAll<Order>()
+            //return UnitOfWork.OrderRepository.GetAll()
+            return UnitOfWork.GetRepo<Order>().GetAll()
                              .GroupBy(order => order.OrderDate.Month)
                              .Select(group => new
                              {
